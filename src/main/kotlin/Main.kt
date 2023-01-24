@@ -14,6 +14,6 @@ fun main() {
 fun commission(card: String, amount: Int, month: Int) =
     when (card) {
         "VK Pay" -> 0
-        "MasterCard", "Maestro" -> if (amount + month < 75000) 0 else (amount - (75000 - month)) * 0.006 + 20
+        "MasterCard", "Maestro" -> if (amount + month <= 75000) 0 else (amount - (75000 - month)) * 0.006 + 20
         else -> if (amount * 0.0075 < 35) 35 else amount * 0.0075
     }
